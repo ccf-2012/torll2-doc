@@ -7,7 +7,7 @@
 -   **torll2**: 主应用，负责任务调度、RSS解析、连接下载器和媒体库管理。
 -   **tordb**: 辅助服务，提供电影、剧集等元数据信息。`torll2` 通过查询它来获取媒体信息。
 -   **qBittorrent**: 下载客户端。`torll2` 会将下载任务发送给它。
--   **[rcp 脚本](https://github.com/ccf-2012/rcp)**: 一个在下载机上运行的“信使”。当 qBittorrent 下载完成后，会调用此脚本，由它向 `torll2` 请求数据，然后执行后续的整理（重命名、硬链接等）操作。
+-   **[rcp 脚本](https://github.com/ccf-2012/rcp)**: 一个在下载机上运行的“信使”。有两种模式，一是运行 rcp_agent，由torll2 发起控制； 另一种是配置 rcp 脚本，当 qBittorrent 下载完成后，会调用此脚本，由它向 `torll2` 请求数据，然后执行后续的整理（重命名、硬链接等）操作。
 -   **[torfilter 油猴脚本](https://greasyfork.org/zh-CN/scripts/451748)**: 在站点网页上发起过滤、查重和下载的脚本。
 ---
 
@@ -31,8 +31,9 @@
 1.  导航至 **下载** -> **下载客户端**。
 2.  点击 **添加下载器**，并填入你的 qBittorrent 客户端信息（WebUI 地址、用户名、密码）。
 3.  这里有一个远端映射路径 `Local Map Path` 此路径是 torll2 所在主机访问媒体文件的根目录，用于后续的文件管理（如删除、读取等）。在查找媒体文件时，是由此路径与媒体库中存储的相对路径拼合而成的。比如可以通过本地网络 nfs mount 过来，或上传网盘后rclone(等) mount过来，或者生成 strm 实现访问。
+4.  处理模式，有 3 种，分别为 local, agent, legacy，由 torll2 直接控制本地选 local 远程选 agent，由 qbittorrent 完成后调用脚本发起，选 legacy, 详见 [下载器处理模式](/features/downloader-modes.md)
 
-### 步骤 3: 在下载器所在机器上配置 rcp 脚本
+### 步骤 3: legacy 模式，在下载器所在机器上配置 rcp 脚本
 
 这一步是为了实现下载完成后，与 `torll2` 通信获取信息后，按要求对文件进行重命名和分类。
 
