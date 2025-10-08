@@ -6,9 +6,9 @@
 
 1.  将项目中的 `.env.example` 文件复制一份，并重命名为 `.env`。
 
-    ```bash
-    cp .env.example .env
-    ```
+```bash
+cp .env.example .env
+```
 
 2.  打开 `.env` 文件，根据你的需要修改以下变量：
 

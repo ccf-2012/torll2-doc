@@ -43,13 +43,13 @@
     -   修改 `cd` 后面的路径，使其指向 `rcp` 目录在你下载机上的**绝对路径**。
     -   确认执行 `rcp.py` 的 `python` 命令路径是否正确。很多设备的默认 Python 版本较低，请确保使用 Python 3.10+ 的解释器。
 
-    ```sh
-    #!/usr/bin/bash
-    # 脚本所在的绝对路径
-    cd /path/to/your/rcp 
-    # 使用正确的 Python 解释器路径执行 rcp.py
-    /opt/bin/python rcp.py $1 -t $2 -u $3 -n $4 >> rcp.log 2>> rcp2e.log
-    ```
+```sh
+#!/usr/bin/bash
+# 脚本所在的绝对路径
+cd /path/to/your/rcp 
+# 使用正确的 Python 解释器路径执行 rcp.py
+/opt/bin/python rcp.py $1 -t $2 -u $3 -n $4 >> rcp.log 2>> rcp2e.log
+```
 
 3.  **修改 `config.ini`**:
     -   在 `rcp` 目录中，将 `config.ini.template` 复制为 `config.ini`。
@@ -60,9 +60,9 @@
 4.  **配置 qBittorrent**:
     -   在 qBittorrent 的 **设置** -> **下载** -> **“Torrent 完成时运行外部程序”** 中，填入以下命令（请使用 `rcp.sh` 的绝对路径）：
 
-    ```sh
-    sh /path/to/your/rcp/rcp.sh "%F" "%I" "%L" "%N"
-    ```
+```sh
+sh /path/to/your/rcp/rcp.sh "%F" "%I" "%L" "%N"
+```
 
 ### 步骤 4: 添加索引站点
 
@@ -78,17 +78,17 @@
 3.  根据需要配置 **Filter** (过滤器)，可以配置多个过滤规则，只有全部 filter 通过才收录，通过 JSON 格式的规则实现精准下载。过滤规则示例见下：
 
     **过滤器示例:**
-    ```json
-    [
-        {
-          "tag": "中字剧集",
-          "title_not_regex": "x264|720p",
-          "subtitle_not_regex": "第\d+.*集",
-          "size_gb_min": 2,
-          "size_gb_max": 15
-        }
-    ]
-    ```
+```json
+[
+    {
+        "tag": "中字剧集",
+        "title_not_regex": "x264|720p",
+        "subtitle_not_regex": "第\d+.*集",
+        "size_gb_min": 2,
+        "size_gb_max": 15
+    }
+]
+```
     **可用过滤器字段:**
 -   `title_regex`, `title_not_regex`: 对种子**标题**进行正则匹配或排除。
 -   `subtitle_regex`, `subtitle_not_regex`: 对种子**副标题**进行正则匹配或排除。

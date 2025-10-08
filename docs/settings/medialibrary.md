@@ -32,12 +32,12 @@
 假设你的媒体文件存储在宿主机的 `/data/media` 目录下，并且你通过 Docker 的 volume 映射，将这个目录挂载到了 `torll2` 容器的 `/media` 路径下。
 
 -   你的 `docker-compose.yml` 中可能有类似这样的配置：
-    ```yaml
-    services:
-      torll2:
-        volumes:
-          - /data/media:/media
-    ```
+```yaml
+services:
+  torll2:
+    volumes:
+      - /data/media:/media
+```
 -   qBittorrent 下载的文件保存在 `/data/media/downloads`。
 -   `rcp` 脚本将文件硬链接到 `/data/media/Movies` 或 `/data/media/TV`。
 
