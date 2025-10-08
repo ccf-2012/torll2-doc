@@ -20,3 +20,7 @@ nav:
     - '媒体库': 'settings/medialibrary.md'
     - '插件': 'settings/plugins.md'
 docs_dir: 'docs'
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
