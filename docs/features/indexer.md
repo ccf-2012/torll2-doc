@@ -2,6 +2,12 @@
 
 `torll2` 的索引功能提供了多种方式来查找和发现内容，主要分为 **浏览**、**搜索** 和 **速览** 三种模式。你可以在 UI 的 **“索引”** 部分找到它们。
 
+
+=== "索引"
+    ![索引](../torll2_screenshots/indexer.png)
+=== "搜索"
+    ![搜索功能](../torll2_screenshots/search.png)
+
 ---
 
 ## 1. 浏览 (Browse)

@@ -47,3 +47,7 @@
 - **Emby 主机地址 (`host`)**: 你的 Emby 或 Jellyfin 服务器的 URL 地址。
   - **示例**: `http://192.168.1.10:8096`
 - **Emby API 密钥 (`api_key`)**: 用于 API 访问的密钥。你可以在 Emby/Jellyfin 的管理后台 -> API 密钥 页面生成一个。
+
+## 截图
+
+![插件设置](../torll2_screenshots/settings-plugins.png)

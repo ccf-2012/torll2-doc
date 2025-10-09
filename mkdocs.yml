@@ -1,4 +1,4 @@
-site_name: Torll2 Docs
+site_name: TORLL2文档
 theme:
   name: material
 nav:
@@ -8,12 +8,12 @@ nav:
     - '基本配置': 'getting-started/configuration.md'
     - '如何更新': 'getting-started/updating.md'
   - '功能特性':
-    - '站点设置': 'features/sites.md'
+    - '媒体管理': 'features/mediamanagement.md'
     - '索引功能': 'features/indexer.md'
     - 'RSS': 'features/rss.md'
     - '追剧订阅': 'features/subscriptions.md'
+    - '站点设置': 'features/sites.md'
     - '下载器处理模式': 'features/downloader-modes.md'
-    - '媒体管理': 'features/mediamanagement.md'
   - '设置':
     - 'TORCP': 'settings/torcp.md'
     - '查重': 'settings/dedupe.md'
@@ -24,3 +24,5 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true

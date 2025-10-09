@@ -50,3 +50,7 @@ services:
 ```
 
 当 `torll2` 需要操作一个文件时，它会自动将 `Local Map Path` 和数据库中记录的相对路径（例如 `Movies/一部电影/movie.mkv`）拼接起来，形成一个它自己可以访问的完整绝对路径：`/media/Movies/一部电影/movie.mkv`。
+
+## 截图
+
+![媒体库设置](../torll2_screenshots/settings-medialibrary.png)

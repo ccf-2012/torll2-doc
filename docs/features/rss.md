@@ -4,6 +4,9 @@ RSS (Really Simple Syndication) 是 `torll2` 实现自动化的关键。通过�
 
 你可以在 **RSS** 菜单下找到所有相关功能。
 
+=== "RSS条目"
+
+![RSS条目](../torll2_screenshots/rssitems.png)
 ---
 
 ## 1. RSS 源管理
@@ -44,3 +47,4 @@ RSS (Really Simple Syndication) 是 `torll2` 实现自动化的关键。通过�
     - **是否已处理** (Finished): 标记一个种子是否已经被系统（例如，通过过滤器）处理过。
 
 **适用场景**: 当你想检查 RSS 的运行情况，或者想手动查找最近有哪些新发布的、符合特定条件的资源时，这个页面非常有用。
+
