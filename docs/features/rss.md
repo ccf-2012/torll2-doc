@@ -6,7 +6,7 @@ RSS (Really Simple Syndication) 是 `torll2` 实现自动化的关键。通过�
 
 === "RSS条目"
 
-![RSS条目](../torll2_screenshots/rssitems.png)
+    ![RSS条目](../torll2_screenshots/rssitems.png)
 ---
 
 ## 1. RSS 源管理

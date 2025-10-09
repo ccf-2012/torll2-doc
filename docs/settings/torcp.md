@@ -4,6 +4,9 @@ TORCP 是 `torll2` 与 `tordb` 服务之间沟通的桥梁，它负责解析种�
 
 **入口**: 设置 -> TORCP 服务设置
 
+=== "TORCP设置"
+
+    ![TORCP设置](../torll2_screenshots/settings-torcp.png)
 ---
 
 ## 配置项说明
@@ -46,6 +49,3 @@ TORCP 是 `torll2` 与 `tordb` 服务之间沟通的桥梁，它负责解析种�
 - **包含类型 (`genre`)**: 控制是否在文件名或目录中包含媒体类型（如 `动作`, `喜剧`）。
 - **类型包含地区 (`genre_with_area`)**: 控制是否在类型信息后附带地区。
 
-## 截图
-
-![TORCP设置](../torll2_screenshots/settings-torcp.png)

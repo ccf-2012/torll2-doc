@@ -2,6 +2,9 @@
 
 插件用于扩展 `torll2` 的功能，例如发送通知。你可以在 **设置** -> **插件** 页面查看和管理所有可用插件。
 
+=== "插件设置"
+
+  ![插件设置](../torll2_screenshots/settings-plugins.png)
 ---
 
 ## 1. Telegram Notifier
@@ -48,6 +51,3 @@
   - **示例**: `http://192.168.1.10:8096`
 - **Emby API 密钥 (`api_key`)**: 用于 API 访问的密钥。你可以在 Emby/Jellyfin 的管理后台 -> API 密钥 页面生成一个。
 
-## 截图
-
-![插件设置](../torll2_screenshots/settings-plugins.png)
