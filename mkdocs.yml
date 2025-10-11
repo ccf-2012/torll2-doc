@@ -8,8 +8,8 @@ nav:
     - '基本配置': 'getting-started/configuration.md'
     - '如何更新': 'getting-started/updating.md'
   - '功能特性':
-    - '媒体管理': 'features/mediamanagement.md'
-    - '索引功能': 'features/indexer.md'
+    - '媒体库与媒体管理': 'features/mediamanagement.md'
+    - '索引器': 'features/indexer.md'
     - 'RSS': 'features/rss.md'
     - '追剧订阅': 'features/subscriptions.md'
     - '站点设置': 'features/sites.md'
