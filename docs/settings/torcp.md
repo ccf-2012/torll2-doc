@@ -20,11 +20,6 @@ TORCP 是 `torll2` 与 `tordb` 服务之间沟通的桥梁，它负责解析种�
 
 - **说明**: 访问 `tordb` 服务所需的 API 密钥。此密钥必须与 `tordb` 启动时在 `.env` 文件中设置的 `TORDB_API_KEY` 完全一致。
 
-### 3. 文件名括号
-
-- **说明**: 自定义最终文件名中附加的括号内容，通常用于标注制作组或版本信息。
-- **示例**: 如果填 `MyGroup`，文件名中可能会出现 `[MyGroup]` 的字样。
-
 ### 4. 目录/文件命名模板
 
 这部分是 TORCP 设置的核心，它决定了媒体文件在硬链接或移动后的目录结构和文件名格式。
@@ -34,18 +29,26 @@ TORCP 是 `torll2` 与 `tordb` 服务之间沟通的桥梁，它负责解析种�
 - **其他路径模板 (`other_path_template`)**: 用于其他未识别类型的媒体。
 
 **可用变量**: 模板中可以使用一系列由 `tordb` 解析出的变量，例如：
-- `{title}`: 媒体标题
-- `{year}`: 年份
-- `{area5}`: 地区（如 `欧美`, `华语` 等）
-- `{emby_bracket}`: 包含 IMDB ID 或 TMDb ID 的括号，用于 Emby/Jellyfin 识别，例如 `[imdbid-tt123456]`。
+- `{type}`  媒体类型 (Movie, TV, Music, Misc)
+- `{title}` 标题
+- `{year}`  年份
+- `{area}` 国家/地区代码 (例如: US, JP)
+- `{area5}` 五大地区分类 (欧美, 港台, 日本，韩国, 大陆, 其他地区)
+- `{genre:动画,纪录}`  指定类型分类，若匹配则使用类型名，否则为“其他”
+- `{emby_bracket}` Emby风格的TMDb ID, [tmdbid=...]
+- `{plex_bracket}` Plex风格的TMDb ID, {tmdb-...}
+
+**示例**: 
+```
+TV/{area5}/{genre:动画,纪录}/{title} {emby_bracket}
+```
+生成路径: 
+```
+TV/日韩/动画/间谍过家家 [tmdbid=12345]
+```
 
 **默认模板示例**:
 - `Movie/{area5}/{title} ({year}) {emby_bracket}`
 - `TV/{area5}/{title} {emby_bracket}`
 
-### 5. 高级命名选项
-
-- **目录包含地区 (`areadir`)**: 控制是否在生成的目录路径中包含地区信息（如 `area5` 变量）。
-- **包含类型 (`genre`)**: 控制是否在文件名或目录中包含媒体类型（如 `动作`, `喜剧`）。
-- **类型包含地区 (`genre_with_area`)**: 控制是否在类型信息后附带地区。
 
