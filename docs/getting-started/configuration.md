@@ -31,9 +31,47 @@
 1.  导航至 **下载** -> **下载客户端**。
 2.  点击 **添加下载器**，并填入你的 qBittorrent 客户端信息（WebUI 地址、用户名、密码）。
 3.  这里有一个远端映射路径 `Local Map Path` 此路径是 torll2 所在主机访问媒体文件的根目录，用于后续的文件管理（如删除、读取等）。在查找媒体文件时，是由此路径与媒体库中存储的相对路径拼合而成的。比如可以通过本地网络 nfs mount 过来，或上传网盘后rclone(等) mount过来，或者生成 strm 实现访问。
-4.  处理模式，有 3 种，分别为 local, agent, legacy，由 torll2 直接控制本地选 local 远程选 agent，由 qbittorrent 完成后调用脚本发起，选 legacy, 详见 [下载器处理模式](../features/downloader-modes.md)
+4.  处理模式，有 3 种，分别为 local, agent, legacy:
+    1.  由 torll2 直接控制本地选 local，这通常需要 torll2 直接运行，在 Docker 中运行使用此模式较麻烦；
+    2.  torll2 在 Docker 中直接控制下载器，或者下载器在远程，选 agent
+    3.  由 qbittorrent 完成后调用脚本发起硬链，选 legacy，这个模式对于远端下载器或Docker外下载器，无法修改和删除硬链
+    4.  详见 [下载器处理模式](../features/downloader-modes.md)
 
-### 步骤 3: legacy 模式，在下载器所在机器上配置 rcp 脚本
+
+
+### 步骤 3.1: 在下载器所在机器上配置  agent 
+参见：[下载器处理模式](https://ccf-2012.github.io/torll2-doc/features/downloader-modes/)
+如果是 Docker 部署的，则以 agent 模式控制较简单，在下载器所在机器上：
+1. 下载 rcp
+```sh
+git clone https://github.com/ccf-2012/rcp
+cd rcp
+```
+
+2. 编辑一个 config.ini, 内容为：
+```ini
+[torll]
+# torll2服务的URL地址，地址按自己的设，后面路径不动
+url = http://<your.torll2.host:6006>/api/v1/torcp/info
+# torll2服务的API Key，由torll2 启动时得到
+api_key = <api key get from torll2>
+# qbit 的名字，与在 torll2 中配置的下载器名字对上
+qbitname = <qb name set in torll2>
+
+[emby]
+# Emby/Jellyfin媒体库的根目录
+root_path = <your media path >
+```
+
+3. 启动 `rcp_agent`
+
+```sh
+# 启一个 screen 
+python rcp_agent.py
+```
+
+
+### 步骤 3.2: legacy 模式，在下载器所在机器上配置 rcp 脚本
 
 这一步是为了实现下载完成后，与 `torll2` 通信获取信息后，按要求对文件进行重命名和分类。
 
@@ -75,27 +113,7 @@ sh /path/to/your/rcp/rcp.sh "%F" "%I" "%L" "%N"
 
 1.  导航至 **RSS** -> **RSS源**。
 2.  点击 **添加FEED**，填入从站点获取的 RSS 订阅链接。
-3.  根据需要配置 **Filter** (过滤器)，可以配置多个过滤规则，只有全部 filter 通过才收录，通过 JSON 格式的规则实现精准下载。过滤规则示例见下：
-
-    **过滤器示例:**
-```json
-[
-    {
-        "tag": "中字剧集",
-        "title_not_regex": "x264|720p",
-        "subtitle_not_regex": "第\d+.*集",
-        "size_gb_min": 2,
-        "size_gb_max": 15
-    }
-]
-```
-    **可用过滤器字段:**
--   `title_regex`, `title_not_regex`: 对种子**标题**进行正则匹配或排除。
--   `subtitle_regex`, `subtitle_not_regex`: 对种子**副标题**进行正则匹配或排除。
--   `rsstags_regex`, `rsstags_not_regex`: 对站点的**种子标签** (Tags) 进行正则匹配或排除。
--   `rsscat_regex`, `rsscat_not_regex`: 对站点的**种子分类** (Category) 进行正则匹配或排除。
--   `size_gb_min`, `size_gb_max`: 对种子**大小**设置 GB 单位的上下限。
--   `rate_min`: 对 IMDB / Douban **评分**设置最小值要求。
+3.  根据需要配置 **Filter** (过滤器)，可以配置多个过滤规则，只有全部 filter 通过才收录，通过 JSON 格式的规则实现精准下载。详见 [过滤器规则说明](../features/rss.md)
 
 
 ### 步骤 6 (可选): 配置通知服务

@@ -15,8 +15,20 @@ cp .env.example .env
     - `MYSQL_ROOT_PASSWORD`: 为数据库设置一个**强密码**。
     - `TORLL2_ADMIN_USER`: 设置 `torll2` 的初始**管理员用户名**。
     - `TORLL2_ADMIN_PASSWORD`: 设置 `torll2` 的初始**管理员密码**。
-    - `TORDB_API_KEY=some_api_key`: 设置一个自己和torll2访问 TORDB 时需要的密码(API Key)
+    - `TORLL2_API_KEY` 设置 `torll2` 的 API KEY，将给 rcp, torfilter 使用。
+    - `MYSQL_HOST`: 使用这里的 docker-compose.yml 建的话，设为 `mysql` 。
+    - `TORDB_API_KEY`: 设置一个自己和torll2访问 TORDB 时需要的密码(API Key)
     - `TORDB_TMDB_API_KEY`: 填入你的 The Movie Database (TMDB) 的 API Key。你可以从 [TMDB 官网](https://www.themoviedb.org/settings/api) 免费申请。
+
+3. 修改 `docker-compose.yml` 中的一行，将 Emby Media 的路径 mount 给 Docker 内
+```yml
+services:
+  torll2:
+  #...  
+    volumes:
+      - <your host emby path>:/media  # <-- 修改这里将 /media 指向你的宿主机上的 emby 硬链生成位置
+```
+
 
 ## 步骤 2: 启动服务
 
@@ -31,30 +43,18 @@ docker compose up --build -d
 
 ## 步骤 3: 获取 torll2 的 API Key
 
-`torll2` 服务在首次启动时会自动为你生成一个 API Key。你需要通过查看容器日志来获取它。
-
-运行以下命令：
-
-```bash
-docker compose logs torll2
-```
-
-在日志输出中，你应该能找到类似下面的一行信息：
-
-```
-INFO:     Generated API Key: [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]
-```
-
+上面 `TORLL2_API_KEY` 设置 `torll2` 的 API KEY，将给 rcp, torfilter 使用。
+如果没有设，则`torll2` 服务在首次启动时会自动为你生成一个 API Key。你需要通过查看容器日志来获取它。
 请**复制并妥善保管**这个 API Key，你将在访问 `torll2` 的 API 时用到它。
 
 ## 步骤 4: 访问应用
 
 现在，你可以通过浏览器访问你的应用了：
 
-- **torll2**: [http://localhost:6006](http://localhost:6006)
+- **torll2**: http://<your server ip >:6006
   - 使用你在 `.env` 文件中设置的 `TORLL2_ADMIN_USER` 和 `TORLL2_ADMIN_PASSWORD` 登录。
 
-- **tordb**: [http://localhost:6009](http://localhost:6009)
+- **tordb**: http://<your server ip>:6009
 
 
 ## 其他常用命令
