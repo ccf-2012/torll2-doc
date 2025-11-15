@@ -1,0 +1,12 @@
+.md-nav__link {
+  font-weight: bold;
+}
+
+.md-content h1,
+.md-content h2,
+.md-content h3,
+.md-content h4,
+.md-content h5,
+.md-content h6 {
+  font-weight: bold;
+}

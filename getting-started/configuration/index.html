@@ -1,0 +1,1283 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../installation/">
+      
+      
+        <link rel="next" href="../updating/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>基本配置 - TORLL2文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="TORLL2文档" class="md-header__button md-logo" aria-label="TORLL2文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TORLL2文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              基本配置
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="TORLL2文档" class="md-nav__button md-logo" aria-label="TORLL2文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TORLL2文档
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速入门
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    快速入门
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安装部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基本配置
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基本配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心概念
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置步骤
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置步骤">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-torll2-tordb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 1: 连接 Torll2 与 Tordb
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 2: 配置下载器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 3.1: 在下载器所在机器上配置 agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-legacy-rcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 3.2: legacy 模式，在下载器所在机器上配置 rcp 脚本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 4: 添加索引站点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-rss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 5: 添加 RSS 订阅
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 6 (可选): 配置通知服务
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 7 (可选): 安装油猴脚本
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../updating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    如何更新
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    功能特性
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    功能特性
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/mediamanagement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    媒体库与媒体管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/indexer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    索引器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/rss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RSS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/filter-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    过滤器规则说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/subscriptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    追剧订阅
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    站点设置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/downloader-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载器处理模式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    设置
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    设置
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/torcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TORCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/dedupe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    查重
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/medialibrary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    媒体库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    插件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心概念
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置步骤
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置步骤">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-torll2-tordb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 1: 连接 Torll2 与 Tordb
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 2: 配置下载器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 3.1: 在下载器所在机器上配置 agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-legacy-rcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 3.2: legacy 模式，在下载器所在机器上配置 rcp 脚本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 4: 添加索引站点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-rss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 5: 添加 RSS 订阅
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 6 (可选): 配置通知服务
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤 7 (可选): 安装油猴脚本
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">设置与使用</h1>
+<p>本部分将指导你在 Docker 服务成功启动后，如何配置 <code>torll2</code> 的各项功能，使其成为一个全自动的媒体管理系统。</p>
+<h2 id="_2">核心概念</h2>
+<ul>
+<li><strong>torll2</strong>: 主应用，负责任务调度、RSS解析、连接下载器和媒体库管理。</li>
+<li><strong>tordb</strong>: 辅助服务，提供电影、剧集等元数据信息。<code>torll2</code> 通过查询它来获取媒体信息。</li>
+<li><strong>qBittorrent</strong>: 下载客户端。<code>torll2</code> 会将下载任务发送给它。</li>
+<li><strong><a href="https://github.com/ccf-2012/rcp">rcp 脚本</a></strong>: 一个在下载机上运行的“信使”。有两种模式，一是运行 rcp_agent，由torll2 发起控制； 另一种是配置 rcp 脚本，当 qBittorrent 下载完成后，会调用此脚本，由它向 <code>torll2</code> 请求数据，然后执行后续的整理（重命名、硬链接等）操作。</li>
+<li><strong><a href="https://greasyfork.org/zh-CN/scripts/451748">torfilter 油猴脚本</a></strong>: 在站点网页上发起过滤、查重和下载的脚本。</li>
+</ul>
+<hr />
+<h2 id="_3">配置步骤</h2>
+<p>请按照以下顺序，在 <code>torll2</code> 的 Web UI (<a href="http://localhost:6006">http://localhost:6006</a>) 中进行配置。</p>
+<h3 id="1-torll2-tordb">步骤 1: 连接 Torll2 与 Tordb</h3>
+<p>这是让系统能够识别媒体信息的关键一步。</p>
+<ol>
+<li>在 <code>torll2</code> 界面中，导航至 <strong>设置</strong> -&gt; <strong>TORCP 服务设置</strong>。</li>
+<li>填写以下信息：<ul>
+<li><strong>TorDB URL</strong>: <code>http://tordb:6009</code>
+    &gt; <strong>说明</strong>: <code>tordb</code> 是 Docker 网络内部的服务名，<code>torll2</code> 通过这个地址访问 <code>tordb</code> 服务。</li>
+<li><strong>TorDB API Key</strong>: 填写你在 <code>.env</code> 文件中为 <code>TORDB_API_KEY</code> 设置的值。</li>
+</ul>
+</li>
+<li>点击保存。</li>
+</ol>
+<h3 id="2">步骤 2: 配置下载器</h3>
+<ol>
+<li>导航至 <strong>下载</strong> -&gt; <strong>下载客户端</strong>。</li>
+<li>点击 <strong>添加下载器</strong>，并填入你的 qBittorrent 客户端信息（WebUI 地址、用户名、密码）。</li>
+<li><strong>本地路径映射</strong>，此路径是 torll2 所在主机访问媒体文件的根目录，用于后续的文件管理（如删除、读取等）。在查找媒体文件时，是由此路径与媒体库中存储的相对路径拼合而成的。比如可以通过本地网络 nfs mount 过来，或上传网盘后rclone(等) mount过来，或者生成 strm 实现访问。<ul>
+<li>对于 Docker 中运行的情况，需要在 <code>docker-compose.yml</code> 中将外部路径映射在 <code>/media</code>，然后这里填比如 <code>/media/emby</code>   </li>
+</ul>
+</li>
+<li>处理模式，有 3 种，分别为 local, agent, legacy:<ol>
+<li>由 torll2 直接控制本地选 local，这通常需要 torll2 直接运行，在 Docker 中运行使用此模式较麻烦；</li>
+<li>torll2 在 Docker 中直接控制下载器，或者下载器在远程，选 agent</li>
+<li>由 qbittorrent 完成后调用脚本发起硬链，选 legacy，这个模式对于远端下载器或Docker外下载器，无法修改和删除硬链</li>
+<li>详见 <a href="../../features/downloader-modes/">下载器处理模式</a></li>
+</ol>
+</li>
+</ol>
+<h3 id="31-agent">步骤 3.1: 在下载器所在机器上配置  agent</h3>
+<p>参见：<a href="https://ccf-2012.github.io/torll2-doc/features/downloader-modes/">下载器处理模式</a>
+如果是 Docker 部署的，则以 agent 模式控制较简单，在下载器所在机器上：
+1. 下载 rcp
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ccf-2012/rcp
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>rcp
+</code></pre></div></p>
+<ol>
+<li>
+<p>编辑一个 config.ini, 内容为：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[torll]</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># torll2服务的URL地址，地址按自己的设，后面路径不动</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">http://&lt;your.torll2.host:6006&gt;/api/v1/torcp/info</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># torll2服务的API Key，由torll2 启动时得到</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="na">api_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;api key get from torll2&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># qbit 的名字，与在 torll2 中配置的下载器名字对上</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="na">qbitname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;qb name set in torll2&gt;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">[emby]</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># Emby/Jellyfin媒体库的根目录</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="na">root_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;your media path &gt;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>启动 <code>rcp_agent</code></p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 启一个 screen </span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>python<span class="w"> </span>rcp_agent.py
+</code></pre></div>
+<h3 id="32-legacy-rcp">步骤 3.2: legacy 模式，在下载器所在机器上配置 rcp 脚本</h3>
+<p>如果不想启动 <code>rcp_agent</code> 可以使用 <code>legacy</code> 模式，此模式下 <code>torll2</code> 不会主动对下载完成的任务进行任何操作。它依赖于一个外部脚本（例如由 qBittorrent 的“下载后运行”功能触发的 <code>rcp.py</code> 脚本）来调用 <code>torll2</code> 的一个特定 API (<code>/api/torcp/process_tor</code>) 来上报信息并请求处理。</p>
+<ol>
+<li><strong>下载脚本</strong>: 从 <a href="https://github.com/ccf-2012/rcp">rcp 脚本仓库</a> 下载到你<strong>运行 qBittorrent 的机器</strong>上（例如，你的 NAS）。</li>
+<li><strong>修改 <code>rcp.sh</code></strong>:<ul>
+<li>用文本编辑器打开 <code>rcp</code> 目录下的 <code>rcp.sh</code> 文件。</li>
+<li>修改 <code>cd</code> 后面的路径，使其指向 <code>rcp</code> 目录在你下载机上的<strong>绝对路径</strong>。</li>
+<li>确认执行 <code>rcp.py</code> 的 <code>python</code> 命令路径是否正确。很多设备的默认 Python 版本较低，请确保使用 Python 3.10+ 的解释器。</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="ch">#!/usr/bin/bash</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># 脚本所在的绝对路径</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">cd</span><span class="w"> </span>/path/to/your/rcp<span class="w"> </span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 使用正确的 Python 解释器路径执行 rcp.py</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>/opt/bin/python<span class="w"> </span>rcp.py<span class="w"> </span><span class="nv">$1</span><span class="w"> </span>-t<span class="w"> </span><span class="nv">$2</span><span class="w"> </span>-u<span class="w"> </span><span class="nv">$3</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$4</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>rcp.log<span class="w"> </span><span class="m">2</span>&gt;&gt;<span class="w"> </span>rcp2e.log
+</code></pre></div>
+<ol>
+<li>
+<p><strong>修改 <code>config.ini</code></strong>:</p>
+<ul>
+<li>在 <code>rcp</code> 目录中，将 <code>config.ini.template</code> 复制为 <code>config.ini</code>。</li>
+<li>修改 <code>config.ini</code> 文件，填入 <code>torll2</code> 的 <code>url</code> 和 <code>api_key</code>。<ul>
+<li><code>url</code>: <code>torll2</code> 服务的地址，例如 <code>http://192.168.1.100:6006</code>。</li>
+<li><code>api_key</code>: <code>torll2</code> 自动生成的 API Key（请从 <code>docker compose logs torll2</code> 日志中获取）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>配置 qBittorrent</strong>:</p>
+<ul>
+<li>在 qBittorrent 的 <strong>设置</strong> -&gt; <strong>下载</strong> -&gt; <strong>“Torrent 完成时运行外部程序”</strong> 中，填入以下命令（请使用 <code>rcp.sh</code> 的绝对路径）：</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sh<span class="w"> </span>/path/to/your/rcp/rcp.sh<span class="w"> </span><span class="s2">&quot;%F&quot;</span><span class="w"> </span><span class="s2">&quot;%I&quot;</span><span class="w"> </span><span class="s2">&quot;%L&quot;</span><span class="w"> </span><span class="s2">&quot;%N&quot;</span>
+</code></pre></div>
+<h3 id="4">步骤 4: 添加索引站点</h3>
+<ol>
+<li>导航至 <strong>索引</strong> -&gt; <strong>站点设置</strong>。</li>
+<li>点击 <strong>添加站点</strong>，从预设列表中选择你的 PT 站点，并配置:</li>
+<li>你的站点 <code>Cookie</code> </li>
+<li><code>速览URL</code> - 这是用于浏览站点时的起始 url，在点选过滤按钮时会基于此 url 进行拼接</li>
+</ol>
+<h3 id="5-rss">步骤 5: 添加 RSS 订阅</h3>
+<ol>
+<li>导航至 <strong>RSS</strong> -&gt; <strong>RSS源</strong>;</li>
+<li>点击 <strong>添加FEED</strong>，填入从站点获取的 RSS 订阅链接。链接类型，对大部分内站来说选 <code>nexusphp</code> ; 在站点上生成 rss 链接时，<code>标题格式</code> 尽可能多选，特别是副标题，标签，torll2 会解析并利用;</li>
+<li><code>是否启用</code> 开关打开，则后台按所设的 <code>间隔（分钟）</code> 定时刷 rss;</li>
+<li>根据需要配置 <strong>Filter</strong> (过滤器)，可以配置多个过滤规则，只有全部 filter 通过才收录，通过 JSON 格式的规则实现精准下载。详见 <a href="filter-rules.md">过滤器规则说明</a> 章节;</li>
+<li><code>匹配时下载</code>  如果打勾，则 <strong>Filter</strong> (过滤器) 条件满足即发起下载，否则添加到数据库中，在RSS条目列表中，人工浏览可发起下载;</li>
+</ol>
+<h3 id="6">步骤 6 (可选): 配置通知服务</h3>
+<p>在 <strong>设置</strong> -&gt; <strong>通知</strong> 中，你可以根据需要配置 Telegram 或 Emby 通知，以便在下载完成或出错时收到提醒。</p>
+<h3 id="7">步骤 7 (可选): 安装油猴脚本</h3>
+<p>详见 <a href="https://greasyfork.org/zh-CN/scripts/451748">torfilter 油猴脚本</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
