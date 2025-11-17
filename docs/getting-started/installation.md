@@ -20,7 +20,8 @@ cp .env.example .env
     - `TORDB_API_KEY`: 设置一个自己和torll2访问 TORDB 时需要的密码(API Key)
     - `TORDB_TMDB_API_KEY`: 填入你的 The Movie Database (TMDB) 的 API Key。你可以从 [TMDB 官网](https://www.themoviedb.org/settings/api) 免费申请。
 
-3. 修改 `docker-compose.yml` 中的一行，将 Emby Media 的路径 mount 给 Docker 内
+3. 修改 `docker-compose.yml` 中的一行，将 Emby Media 的路径 mount 给 Docker 内部访问
+    - 这一路径是 RCP agent 处理的下载后的媒体的目标目录，即硬链将在此目录生成；在设置下载器时 `本地路径映射` 应在此目录之下。
 ```yml
 services:
   torll2:
@@ -60,7 +61,7 @@ docker compose -f docker-compose.yml -f docker-compose.prowlarr.yml -f docker-co
 **注意：** 如果你之前独立运行过 Prowlarr 容器，请确保在运行上述命令前停止并移除它，以避免端口冲突。
 
 
-## 步骤 2.2: 获取 torll2 的 API Key
+### 步骤 2.2: 获取 torll2 的 API Key
 
 上面 `TORLL2_API_KEY` 设置 `torll2` 的 API KEY，将给 rcp, torfilter 使用。
 如果没有设，则`torll2` 服务在首次启动时会自动为你生成一个 API Key。你需要通过查看容器日志来获取它。
