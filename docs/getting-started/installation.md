@@ -60,20 +60,21 @@ docker compose -f docker-compose.yml -f docker-compose.prowlarr.yml -f docker-co
 **注意：** 如果你之前独立运行过 Prowlarr 容器，请确保在运行上述命令前停止并移除它，以避免端口冲突。
 
 
-## 步骤 3: 获取 torll2 的 API Key
+## 步骤 2.2: 获取 torll2 的 API Key
 
 上面 `TORLL2_API_KEY` 设置 `torll2` 的 API KEY，将给 rcp, torfilter 使用。
 如果没有设，则`torll2` 服务在首次启动时会自动为你生成一个 API Key。你需要通过查看容器日志来获取它。
 请**复制并妥善保管**这个 API Key，你将在访问 `torll2` 的 API 时用到它。
 
-## 步骤 4: 访问应用
+## 步骤 3: 访问应用
 
 现在，你可以通过浏览器访问你的应用了：
 
-- **torll2**: http://<your server ip >:6006
+- **torll2**: http://your_server_ip:6006
   - 使用你在 `.env` 文件中设置的 `TORLL2_ADMIN_USER` 和 `TORLL2_ADMIN_PASSWORD` 登录。
 
-- **tordb**: http://<your server ip>:6009
+- **tordb**: http://your_server_ip:6009
+  - 使用你在  `.env` 文件中设置的 `TORDB_API_KEY` 登录。
 
 
 ## 其他常用命令
